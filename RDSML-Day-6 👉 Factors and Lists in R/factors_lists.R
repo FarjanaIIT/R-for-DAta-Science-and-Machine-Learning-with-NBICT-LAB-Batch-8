@@ -48,7 +48,7 @@ my_list$Pieces
 my_list$Colors
 my_list$message
 
-# Calling specific items from the data  structure 
+# Calling specific/particular items from the data  structure 
 
 my_list$Colors[1]
 my_list$Colors[3]
