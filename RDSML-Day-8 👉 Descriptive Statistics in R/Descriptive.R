@@ -26,9 +26,9 @@ attach(nycflights13::flights)
 # Lets look at the first 6 records using the head () function
 
 head(nycflights13::flights)
-summary(distance)
+summary(distance) # summary function will not give details.summary base function of R
 
-describe(distance)
+describe(distance) # describe function will not give details, function of psych package.
 
 demo = cbind(arr_delay, dep_delay, distance) # if I want to bind column, needs to use cbind function
 describe(demo)
