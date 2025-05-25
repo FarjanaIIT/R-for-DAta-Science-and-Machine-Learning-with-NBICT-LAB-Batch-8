@@ -48,6 +48,8 @@ marks = c(40, 55, 69, 54, 45)
 gender = c('Male', 'Female', 'Female', 'Male', 'Female')
 male = c(TRUE, FALSE, FALSE, TRUE, FALSE)
 
+# In Matrix, we can't work with different data types, we  needs data frames to work with different data.
+
 stu_data = data.frame(student_names, study_hours, marks, gender)
 stu_data
 summary(stu_data)
