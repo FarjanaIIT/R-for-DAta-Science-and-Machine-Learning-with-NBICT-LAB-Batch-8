@@ -45,7 +45,7 @@ ggplot(dataset, aes(x = weight)) +
   geom_density(fill = "blue", alpha = .3)
 
 
-# Changing line color and fill color
+# Changing bin color and fill color
 
 ggplot(dataset, aes(x = weight)) +
   geom_histogram(color = "darkblue", fill = "lightblue")
