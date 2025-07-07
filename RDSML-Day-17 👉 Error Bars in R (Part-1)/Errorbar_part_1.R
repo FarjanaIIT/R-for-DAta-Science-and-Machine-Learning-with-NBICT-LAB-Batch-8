@@ -2,6 +2,10 @@
 
 ToothGrowth
 write.csv(ToothGrowth, "ToothGrowth_csv")
+write.table(ToothGrowth, "ToothGrowth_table")
+library(openxlsx)
+
+write.xlsx(ToothGrowth, "ToothGrowth.xlsx")
 
 tooth_data = ToothGrowth
 
@@ -48,10 +52,11 @@ class(d_summary$dose)
 
 library(ggplot2)
 ggplot(d_summary, aes(x = dose, y = len, fill = supp)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_bar(stat = "identity", position = position_dodge())+
   geom_errorbar(aes(ymin = len - sd, ymax = len + sd), width = 0.2, position = position_dodge(0.9)) +
-  theme_minimal()
-
+  scale_fill_manual(values = c("VC" = "steelblue", "OJ" = "yellow")) +
+  labs(title = "Dose per length", x = "Dose", y = "Length") +
+  theme_classic()
 
 
 
