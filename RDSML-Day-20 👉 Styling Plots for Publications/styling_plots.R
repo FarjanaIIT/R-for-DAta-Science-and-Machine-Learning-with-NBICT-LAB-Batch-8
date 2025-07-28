@@ -25,7 +25,7 @@ ggplot(df, aes(x = wt, y = mpg, color = cyl)) +
   geom_point(size = 2) + 
   scale_color_viridis_d(name = "Cylinders") +
   labs(x = "weight", y = "million per gallon", title = "Fuel effeciency") +
-  theme_classic(base_size = 8, base_family = "serif") +
+  theme_classic(base_size = 5, base_family = "serif") +
 theme(plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
       axis.title = element_text(face = "bold", size = 14),
       axis.text = element_text(size = 10),
@@ -33,6 +33,7 @@ theme(plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
       legend.title = element_text(face = "bold"),
       legend.text = element_text(size = 12))
   
-  
+ #Saving the plot for publications
+ggsave("styling_plot.png", p, width = 6, height = 4, dpi = 300)
 
 
