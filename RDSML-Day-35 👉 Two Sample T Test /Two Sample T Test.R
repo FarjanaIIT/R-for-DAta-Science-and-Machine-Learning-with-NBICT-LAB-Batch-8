@@ -14,3 +14,20 @@ var.test(x = dataset$Male, y = dataset$Female)
 # Running the indipendent sample 
 
 t.test(x = dataset$Male, y = dataset$Female, var.equal = TRUE)
+
+library(ggplot2)
+library(dplyr)
+
+
+
+means <- c(mean(dataset$Male), mean(dataset$Female))
+
+names(means) <- c("Male", "Female")
+
+barplot(means,
+        col = c("skyblue", "pink"),
+        main = "Group Means",
+        ylab = "Mean Value")
+
+
+  
