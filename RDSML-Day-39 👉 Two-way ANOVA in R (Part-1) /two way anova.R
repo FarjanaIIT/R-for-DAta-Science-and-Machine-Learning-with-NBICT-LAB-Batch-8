@@ -24,3 +24,30 @@ ggplot(summs, aes(irr, mean, group = fert))+
        title="Interaction of Fertilizer x Irrigation") +
   theme_classic(base_size = 12)
 
+m <- aov(y ~  fert + irr + fert * irr, data = d)
+
+# Assumptions visual checks
+par(mfrow = c(2,2))
+plot(m)
+
+par(mfrow = c(1,1))
+
+# Shapiro-wilk test on residuals (normality)
+
+res <- residuals(m)
+
+shapiro.test(res)
+
+#Levene’s test for equal variances (center = median is robust)
+
+library(car)
+leveneTest(y ~ fert * irr, data = d, center = median)
+
+# Interaction contrasts (simple effects): effect of fert at each  level
+library(emmeans)
+contrast(emmeans(m, ~ fert | irr), method = "pairwise", adjust = "tukey")
+
+# effect of irr at each fert
+library(emmeans)
+contrast(emmeans(m, ~ irr | fert), method = "pairwise", adjust = "tukey")
+
