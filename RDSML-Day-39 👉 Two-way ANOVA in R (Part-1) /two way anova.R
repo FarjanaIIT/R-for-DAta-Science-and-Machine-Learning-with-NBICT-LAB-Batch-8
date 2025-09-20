@@ -51,3 +51,21 @@ contrast(emmeans(m, ~ fert | irr), method = "pairwise", adjust = "tukey")
 library(emmeans)
 contrast(emmeans(m, ~ irr | fert), method = "pairwise", adjust = "tukey")
 
+#Main‑effect comparisons (only if interaction is negligible)
+
+contrast(emmeans(m, ~ fert), method = "tukey")
+contrast(emmeans(m, ~ irr), method = "tukey")
+
+# CLD letters
+library(multcomp)
+# install.packages("multcompView")
+library(multcompView)
+library(emmeans)  
+library(multcomp)  
+
+# Now this will work:
+group_letters <- cld(emmeans(m, ~ fert * irr), Letters = letters)
+
+
+group_letters <- cld(emmeans(m, ~ fert * irr), Letters = letters)
+print(group_letters)
