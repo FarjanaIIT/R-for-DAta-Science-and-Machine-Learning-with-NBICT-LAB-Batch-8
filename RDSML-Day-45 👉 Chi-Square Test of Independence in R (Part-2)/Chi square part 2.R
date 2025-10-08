@@ -57,4 +57,10 @@ round(contrib, 3)
 corrplot(contrib, is.cor = FALSE)
 
 
-         
+# [From the image above, it can be seen that the most contributing cells to the Chi-square are Wife/Laundry (7.74%), Wife/Main_meal (4.98%), Husband/Repairs (21.9%), Jointly/Holidays (12.44%).
+#   
+#   These cells contribute about 47.06% to the total Chi-square score and thus account for most of the difference between expected and observed values.
+#   
+#   This confirms the earlier visual interpretation of the data. As stated earlier, visual interpretation may be complex when the contingency table is very large. In this case, the contribution of one cell to the total Chi-square score becomes a useful way of establishing the nature of dependency.]
+# 
+#          
