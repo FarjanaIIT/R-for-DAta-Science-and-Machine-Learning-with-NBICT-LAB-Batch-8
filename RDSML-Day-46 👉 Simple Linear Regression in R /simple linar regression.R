@@ -13,3 +13,10 @@ test_set <- subset(dataset, split == FALSE)
 
 nrow(training_set)
 nrow(test_set)
+
+# Fitting the model
+regressor <- lm(formula = Salary ~ YearsExperience, 
+                data = training_set)
+
+# View summary of the model
+summary(regressor)
