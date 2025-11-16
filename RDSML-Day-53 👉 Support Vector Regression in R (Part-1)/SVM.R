@@ -27,3 +27,12 @@ bike = bike %>%
  )
 str(bike)
 
+# Train/split test
+
+set.seed(123)
+n = nrow(bike)
+indices = seq_len(n)
+
+train_idx = sample(indices, size = 0.7 * n)
+train_set = bike[train_idx, ]
+test_set = bike[train_idx, ]
